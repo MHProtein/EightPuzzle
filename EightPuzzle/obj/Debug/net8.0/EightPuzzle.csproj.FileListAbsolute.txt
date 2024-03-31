@@ -1,0 +1,14 @@
+E:\AI Intro\EightPuzzle\EightPuzzle\bin\Debug\net8.0\EightPuzzle.exe
+E:\AI Intro\EightPuzzle\EightPuzzle\bin\Debug\net8.0\EightPuzzle.deps.json
+E:\AI Intro\EightPuzzle\EightPuzzle\bin\Debug\net8.0\EightPuzzle.runtimeconfig.json
+E:\AI Intro\EightPuzzle\EightPuzzle\bin\Debug\net8.0\EightPuzzle.dll
+E:\AI Intro\EightPuzzle\EightPuzzle\bin\Debug\net8.0\EightPuzzle.pdb
+E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\EightPuzzle.GeneratedMSBuildEditorConfig.editorconfig
+E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\EightPuzzle.AssemblyInfoInputs.cache
+E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\EightPuzzle.AssemblyInfo.cs
+E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\EightPuzzle.csproj.CoreCompileInputs.cache
+E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\EightPuzzle.dll
+E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\refint\EightPuzzle.dll
+E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\EightPuzzle.pdb
+E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\EightPuzzle.genruntimeconfig.cache
+E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\ref\EightPuzzle.dll

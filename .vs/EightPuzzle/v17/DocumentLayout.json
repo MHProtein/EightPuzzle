@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "E:\\AI Intro\\EightPuzzle\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FA496F48-87F6-4B18-8F55-98AA36FA1E5D}|EightPuzzle\\EightPuzzle.csproj|E:\\AI Intro\\EightPuzzle\\eightpuzzle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA496F48-87F6-4B18-8F55-98AA36FA1E5D}|EightPuzzle\\EightPuzzle.csproj|solutionrelative:eightpuzzle\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA496F48-87F6-4B18-8F55-98AA36FA1E5D}|EightPuzzle\\EightPuzzle.csproj|e:\\ai intro\\eightpuzzle\\eightpuzzle\\puzzle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA496F48-87F6-4B18-8F55-98AA36FA1E5D}|EightPuzzle\\EightPuzzle.csproj|solutionrelative:eightpuzzle\\puzzle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA496F48-87F6-4B18-8F55-98AA36FA1E5D}|EightPuzzle\\EightPuzzle.csproj|E:\\AI Intro\\EightPuzzle\\eightpuzzle\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA496F48-87F6-4B18-8F55-98AA36FA1E5D}|EightPuzzle\\EightPuzzle.csproj|solutionrelative:eightpuzzle\\vector2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA496F48-87F6-4B18-8F55-98AA36FA1E5D}|EightPuzzle\\EightPuzzle.csproj|E:\\AI Intro\\EightPuzzle\\eightpuzzle\\tree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA496F48-87F6-4B18-8F55-98AA36FA1E5D}|EightPuzzle\\EightPuzzle.csproj|solutionrelative:eightpuzzle\\tree.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA496F48-87F6-4B18-8F55-98AA36FA1E5D}|EightPuzzle\\EightPuzzle.csproj|E:\\AI Intro\\EightPuzzle\\eightpuzzle\\check.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA496F48-87F6-4B18-8F55-98AA36FA1E5D}|EightPuzzle\\EightPuzzle.csproj|solutionrelative:eightpuzzle\\check.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FA496F48-87F6-4B18-8F55-98AA36FA1E5D}|EightPuzzle\\EightPuzzle.csproj|E:\\AI Intro\\EightPuzzle\\eightpuzzle\\grid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FA496F48-87F6-4B18-8F55-98AA36FA1E5D}|EightPuzzle\\EightPuzzle.csproj|solutionrelative:eightpuzzle\\grid.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Grid.cs",
+              "DocumentMoniker": "E:\\AI Intro\\EightPuzzle\\EightPuzzle\\Grid.cs",
+              "RelativeDocumentMoniker": "EightPuzzle\\Grid.cs",
+              "ToolTip": "E:\\AI Intro\\EightPuzzle\\EightPuzzle\\Grid.cs",
+              "RelativeToolTip": "EightPuzzle\\Grid.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-31T08:31:46.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Tree.cs",
+              "DocumentMoniker": "E:\\AI Intro\\EightPuzzle\\EightPuzzle\\Tree.cs",
+              "RelativeDocumentMoniker": "EightPuzzle\\Tree.cs",
+              "ToolTip": "E:\\AI Intro\\EightPuzzle\\EightPuzzle\\Tree.cs",
+              "RelativeToolTip": "EightPuzzle\\Tree.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T14:18:27.783Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Check.cs",
+              "DocumentMoniker": "E:\\AI Intro\\EightPuzzle\\EightPuzzle\\Check.cs",
+              "RelativeDocumentMoniker": "EightPuzzle\\Check.cs",
+              "ToolTip": "E:\\AI Intro\\EightPuzzle\\EightPuzzle\\Check.cs",
+              "RelativeToolTip": "EightPuzzle\\Check.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T13:19:00.932Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Puzzle.cs",
+              "DocumentMoniker": "E:\\AI Intro\\EightPuzzle\\EightPuzzle\\Puzzle.cs",
+              "RelativeDocumentMoniker": "EightPuzzle\\Puzzle.cs",
+              "ToolTip": "E:\\AI Intro\\EightPuzzle\\EightPuzzle\\Puzzle.cs",
+              "RelativeToolTip": "EightPuzzle\\Puzzle.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAUwGAAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T10:20:42.65Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Vector2.cs",
+              "DocumentMoniker": "E:\\AI Intro\\EightPuzzle\\EightPuzzle\\Vector2.cs",
+              "RelativeDocumentMoniker": "EightPuzzle\\Vector2.cs",
+              "ToolTip": "E:\\AI Intro\\EightPuzzle\\EightPuzzle\\Vector2.cs",
+              "RelativeToolTip": "EightPuzzle\\Vector2.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T10:20:39.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "E:\\AI Intro\\EightPuzzle\\EightPuzzle\\Program.cs",
+              "RelativeDocumentMoniker": "EightPuzzle\\Program.cs",
+              "ToolTip": "E:\\AI Intro\\EightPuzzle\\EightPuzzle\\Program.cs",
+              "RelativeToolTip": "EightPuzzle\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T10:17:56.979Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
