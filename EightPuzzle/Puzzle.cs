@@ -3,13 +3,13 @@ using System.Collections.Generic;
 
 namespace EightPuzzle
 {
-    enum SolveMethod
+    public enum SolveMethod
     {
         Greedy,
         AStar
     }
 
-    enum Direction
+    public enum Direction
     {
         UP,
         DOWN,
@@ -42,48 +42,7 @@ namespace EightPuzzle
             }
         }
 
-        void PrintPath(Node node)
-        {
-            if (node.parent != null)
-            {
-                PrintPath(node.parent);
-            }
-            node.check.Print();
-        }
-
-        public bool Greedy_Recursion(Node node, ref List<Node> explored)
-        {
-            if (InExplored(ref node, ref explored))
-                return false;
-            explored.Add(node);
-
-            var actions = GetActions(node, SolveMethod.Greedy);
-
-            while (actions.Count != 0)
-            {
-                var temp = actions.Dequeue();
-                node.children.Enqueue(temp, temp.mhtDistance);
-            }
-
-            while (node.children.Count != 0)
-            {
-                var child = node.children.Dequeue();
-
-                if (CheckEquality(ref child.check, ref goalState))
-                {
-                    Console.WriteLine("Goal Reached!");
-                    PrintPath(child);
-                    return true;
-                }
-
-                if (Greedy_Recursion(child, ref explored))
-                    return true;
-            }
-
-            return false;
-        }
-
-        public void Greedy()
+        public Solution Greedy()
         {
             Node currentNode = new Node(currentState);
             currentNode.cost = 0;
@@ -93,8 +52,33 @@ namespace EightPuzzle
             List<Node> explored = new List<Node>();
             PriorityQueue<Node, int> queue = new PriorityQueue<Node, int>();
             queue.Enqueue(currentNode, currentNode.mhtDistance);
-            Node temp;
-            Greedy_Recursion(currentNode, ref explored);
+
+            while (queue.Count != 0)
+            {
+                currentNode = queue.Dequeue();
+                if (InExplored(ref currentNode, ref explored))
+                    continue;
+                explored.Add(currentNode);
+                if (CheckEquality(ref currentNode.check, ref goalState))
+                {
+                    var solution = new Solution(true);
+                    Console.WriteLine("Goal Reached!");
+                    solution.steps = GetPath(currentNode);
+                    return solution;
+                }
+                var actions = GetActions(currentNode, SolveMethod.Greedy);
+
+                while (actions.Count != 0)
+                {
+                    var action = actions.Dequeue();
+                    if (!explored.Contains(action))
+                    {
+                        queue.Enqueue(action, action.mhtDistance);
+                    }
+                }
+            }
+
+            return new Solution(false);
         }
 
         bool InExplored(ref Node node, ref List<Node> explored)
@@ -122,43 +106,74 @@ namespace EightPuzzle
             return true;
         }
         
-        public void AStar()
+        public Solution IDAStar(Int64 depth)
         {
             Node currentNode = new Node(currentState);
+            Node tempNode = new Node(currentState);
             currentNode.cost = 0;
             currentNode.parent = null;
             currentNode.mhtDistance = ManhattanDistance(currentState);
             currentNode.heuristicValue = currentNode.cost + currentNode.mhtDistance;
             List<Node> explored = new List<Node>();
-            PriorityQueue<Node, int> queue = new PriorityQueue<Node, int>();
-            queue.Enqueue(currentNode, currentNode.heuristicValue);
-            Node temp;
 
-            while (queue.Count != 0)
+            Solution solution = new Solution(false);
+
+            for (int i = 0; i < depth; i++)
             {
-                currentNode = queue.Dequeue();
-                if (InExplored(ref currentNode, ref explored))
-                    continue;
-                explored.Add(currentNode);
-                if (CheckEquality(ref currentNode.check, ref goalState))
-                {
-                    Console.WriteLine("Goal Reached!");
-                    PrintPath(currentNode);
-                    return;
-                }
-                var actions = GetActions(currentNode, SolveMethod.AStar);
+                solution = AStar_Recursion(currentNode, ref explored, i);
 
-                while (actions.Count != 0)
+                if (!solution.cutoff)
                 {
-                    var action = actions.Dequeue();
-                    if (!explored.Contains(action))
-                    {
-                        queue.Enqueue(action, action.heuristicValue);
-                    }
+                    return solution;
                 }
+                else
+                {
+                    currentNode = tempNode;
+                    explored.Clear();
+                }
+
             }
 
-            Console.WriteLine("Failed to reach the goal!");
+            return solution;
+        }
+
+        Solution AStar_Recursion(Node node, ref List<Node> explored, Int64 depth)
+        {
+            if (depth == 1)
+            {
+                return new Solution(false, true);
+            }
+            depth--;
+            if (InExplored(ref node, ref explored))
+                return new Solution(false);
+            explored.Add(node);
+
+            var actions = GetActions(node, SolveMethod.AStar);
+
+            while (actions.Count != 0)
+            {
+                var temp = actions.Dequeue();
+                node.children.Enqueue(temp, temp.heuristicValue);
+            }
+
+            while (node.children.Count != 0)
+            {
+                var child = node.children.Dequeue();
+
+                if (CheckEquality(ref child.check, ref goalState))
+                {
+                    Console.WriteLine("Goal Reached!");
+                    var solution = new Solution(true);
+                    solution.steps = GetPath(child);
+                    return solution;
+                }
+
+                var sol = AStar_Recursion(child, ref explored, depth);
+                if (sol.solved)
+                    return sol;
+            }
+
+            return new Solution(false);
         }
 
         PriorityQueue<Node, int> GetActions(Node state, SolveMethod method)
@@ -168,63 +183,50 @@ namespace EightPuzzle
             var moves = GetMoves(state.check);
             Node newState;
             var pos = state.check.UnPossessedPos;
+            var offset = new Vector2(0, 0);
             foreach (var move in moves)
             {
+                offset = new Vector2(0, 0);
                 newState = new Node(node: state);
                 switch (move)
                 {
                     case Direction.UP:
-                    {
-                        temp = newState.check.data[pos.y - 1, pos.x];
-                        newState.check.data[pos.y, pos.x].position.y -= 1;
-                        temp.position.y += 1;
-                        newState.check.data[pos.y - 1, pos.x] = newState.check.data[pos.y, pos.x];
-                        newState.check.data[pos.y, pos.x] = temp;
-                        newState.check.UnPossessedPos.y -= 1;
-                        
+                        offset.y = -1;
                         break;
-                    }
                     case Direction.DOWN:
-                    {
-                        temp = newState.check.data[pos.y + 1, pos.x];
-                        newState.check.data[pos.y, pos.x].position.y += 1;
-                        temp.position.y -= 1;
-                        newState.check.data[pos.y + 1, pos.x] = newState.check.data[pos.y, pos.x];
-                        newState.check.data[pos.y, pos.x] = temp;
-                        newState.check.UnPossessedPos.y += 1;
+                        offset.y = 1;
                         break;
-                    }
                     case Direction.LEFT:
-                    {
-                        temp = newState.check.data[pos.y, pos.x - 1];
-                        newState.check.data[pos.y, pos.x].position.x -= 1;
-                        temp.position.x += 1;
-                        newState.check.data[pos.y, pos.x - 1] = newState.check.data[pos.y, pos.x];
-                        newState.check.data[pos.y, pos.x] = temp;
-                        newState.check.UnPossessedPos.x -= 1;
-                 
+                        offset.x = -1;
                         break;
-                    }
                     case Direction.RIGHT:
-                    {
-                        temp = newState.check.data[pos.y, pos.x + 1];
-                        temp.position.x -= 1;
-                        newState.check.data[pos.y, pos.x].position.x += 1;
-                        newState.check.data[pos.y, pos.x + 1] = newState.check.data[pos.y, pos.x];
-                        newState.check.data[pos.y, pos.x] = temp;
-                        newState.check.UnPossessedPos.x += 1;
-                            break;
-                    }
+                        offset.x = 1;
+                        break;
                 }
+                temp = newState.check.data[pos.y + offset.y, pos.x + offset.x];
+                temp.position.x -= offset.x;
+                temp.position.y -= offset.y;
+                newState.check.data[pos.y, pos.x].position.x += offset.x;
+                newState.check.data[pos.y, pos.x].position.y += offset.y;
+                newState.check.data[pos.y + offset.y, pos.x + offset.x] = newState.check.data[pos.y, pos.x];
+                newState.check.data[pos.y, pos.x] = temp;
+                newState.check.UnPossessedPos.x += offset.x;
+                newState.check.UnPossessedPos.y += offset.y;
+
                 newState.parent = state;
                 newState.mhtDistance = ManhattanDistance(newState.check);
-                newState.cost = state.cost + 1;
-                newState.heuristicValue = newState.cost + newState.mhtDistance;
+                newState.move = move;
                 state.AddChild(newState);
-                if(method == SolveMethod.Greedy)
+                if (method == SolveMethod.Greedy)
+                {
                     actions.Enqueue(newState, newState.mhtDistance);
+                }
                 else
+                {
+                    newState.cost = state.cost + 1;
+                    newState.heuristicValue = newState.cost + newState.mhtDistance;
                     actions.Enqueue(newState, newState.heuristicValue);
+                }
             }
             return actions;
         }
@@ -255,5 +257,22 @@ namespace EightPuzzle
             }
             return distance;
         }
+
+        LinkedList<Direction> GetPath(Node node)
+        {
+            var path = new LinkedList<Direction>();
+            GetPathRecursion(node, ref path);
+            return path;
+        }
+
+        void GetPathRecursion(Node node, ref LinkedList<Direction> path)
+        {
+            if (node.parent != null)
+            {
+                path.AddFirst(node.move);
+                GetPathRecursion(node.parent, ref path);
+            }
+        }
+
     }
 }

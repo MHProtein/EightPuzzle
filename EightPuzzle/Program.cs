@@ -9,7 +9,8 @@ namespace EightPuzzle
             string initState = "724506831";
             string goalState = "012345678";
             Puzzle puzzle = new Puzzle(initState, goalState);
-            puzzle.AStar();
+            var solution = puzzle.IDAStar(100000);
+            solution.PrintSteps();
         }
     }
 }

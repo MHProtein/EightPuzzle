@@ -10,6 +10,7 @@ namespace EightPuzzle
         public int cost = 0;
         public int mhtDistance = 0;
         public int heuristicValue = 0;
+        public Direction move;
 
         public Node(Check check)
         {
@@ -36,10 +37,5 @@ namespace EightPuzzle
             child.parent = this;
             children.Enqueue(child, child.heuristicValue);
         }
-    }
-    
-    public class Tree
-    {
-        public Node root;
     }
 }

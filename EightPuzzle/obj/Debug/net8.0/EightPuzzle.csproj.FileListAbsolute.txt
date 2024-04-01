@@ -12,3 +12,4 @@ E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\refint\EightPuzzle.dll
 E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\EightPuzzle.pdb
 E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\EightPuzzle.genruntimeconfig.cache
 E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\ref\EightPuzzle.dll
+E:\AI Intro\EightPuzzle\EightPuzzle\obj\Debug\net8.0\EightPuzzle.sourcelink.json

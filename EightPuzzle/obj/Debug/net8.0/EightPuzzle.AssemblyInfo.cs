@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EightPuzzle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c80b9a295ea09383f51b1b1ecd80f543d73c996")]
 [assembly: System.Reflection.AssemblyProductAttribute("EightPuzzle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EightPuzzle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
